@@ -11,20 +11,43 @@ class MahasiswaController extends Controller
 {
 	public function awal()
 {
-	return "Halo"; 
+	return view('mahasiswa.awal',['data'=>Mahasiswa::all()]); 
 }
     public function tambah() {
 
-	return $this->simpan();
+	return view('mahasiswa.tambah');
 }
-	public function simpan()
-{
+	public function simpan(){
 	$mahasiswa = new Mahasiswa();
-	$mahasiswa->nama = 'Nurul Istiqomah';
-	$mahasiswa->nim = '1053678920';
-	$mahasiswa->alamat = 'Wahid Hasyim';
-	$mahasiswa->pengguna_id = '1';
-	$mahasiswa->save();
-	return "data dengan  <br> nama : {$mahasiswa->nama},<br> nim : {$mahasiswa->nim},<br> alamat : {$mahasiswa->alamat},<br> pengguna_id : {$mahasiswa->pengguna_id} <br> telah disimpan !!!";
+	$mahasiswa->nama=$input->nama;
+	$mahasiswa->nim =$input->nim;
+	$mahasiswa->alamat =$input->alamat;
+	$mahasiswa->pengguna_id =$input->pengguna_id;
+	$mahasiswa=Pengguna::find(1)->mahasiswa;
+	$informasi = $mahasiswa-> save() ? 'Berhasil update data' : 'Gagal update data';
+	return redirect('mahasiswa')->with(['informasi'=>$informasi]);
+}
+public function edit($id){
+	$mahasiswa=Mahasiswa::find($id);
+	return view('mahasiswa.edit')->with(array('mahasiswa'=>$mahasiswa));
+}
+public function lihat($id){
+	$mahasiswa = Mahasiswa::find($id);
+	return view('mahasiswa.lihat')->with(array('mahasiswa'=>$mahasiswa));
+}
+public function update($id, Requests $input){
+	$mahasiswa = Mahasiswa::find($id);
+	$mahasiswa->nama=$input->nama;
+	$mahasiswa->nim =$input->nim;
+	$mahasiswa->alamat =$input->alamat;
+	$mahasiswa->pengguna_id =$input->pengguna_id;
+	$informasi = $mahasiswa-> save() ? 'Berhasil update data' : 'Gagal update data';
+	return redirect('mahasiswa')->with(['informasi'=>$informasi]);
+}
+public function hapus($id){
+	$mahasiswa = Mahasiswa::find($id);
+	$informasi = $mahasiswa->delete() ? 'Berhasil hapus data' : 'Gagal hapus data';
+	return redirect('mahasiswa')->with(['informasi'=>$informasi]);
 	}
 }
+
