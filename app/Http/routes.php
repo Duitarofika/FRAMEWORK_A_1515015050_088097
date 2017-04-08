@@ -71,5 +71,17 @@ Route::get('dosen/edit/{dosen}','PenggunaController@edit');
 Route::post('dosen/edit/{dosen}','PenggunaController@update');
 Route::get('dosen/edit/{dosen}','PenggunaController@hapus');
 
+Route::get('mahasiswa{mahasiswa}','MahasiswaController@lihat');
+Route::post('mahasiswa/simpan','MahasiswaController@simpan');
+Route::get('mahasiswa/edit/{mahasiswa}','MahasiswaController@edit');
+Route::post('mahasiswa/edit/{mahasiswa}','MahasiswaController@update');
+Route::get('mahasiswa/edit/{mahasiswa}','MahasiswaController@hapus');
+
+Route::get('mahasiswa','MahasiswaController@awal');
+Route::post('mahasiswa/tambah','MahasiswaController@tambah');
+Route::get('mahasiswa/{mahasiswa}','MahasiswaController@lihat');
+Route::post('mahasiswa/simpan','MahasiswaController@simpan');
+Route::get('mahasiswa/edit/{mahasiswa}','MahasiswaController@edit');
+Route::get('mahasiswa/edit/{mahasiswa}','MahasiswaController@update');
 
 

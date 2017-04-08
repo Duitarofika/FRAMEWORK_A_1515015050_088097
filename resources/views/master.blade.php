@@ -30,8 +30,7 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>                  
+                         <span class="icon-bar"></span>                  
                 </button>
                 <a href="{{url('/')}}" class="navbar-brand">Laravel-5</a>
             </div>
@@ -55,7 +54,7 @@
                     </li>
                     <li class="dropdown active">
                         <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pengaturan <span class="caret"></span></a>
-                        <ul class="dropdown-menu" aria-labelledby="dLabel">
+  ]                      <ul class="dropdown-menu" aria-labelledby="dLabel">
                             <li><a href="{{url('pengguna')}}">Pengguna</a></li>
                             <li class="divider"></li><li><a href="{{url('ruangan')}}">Ruangan</a></li>
                             <li><a href="{{url('matakuliah')}}">Matakuliah</a></li>
@@ -77,7 +76,7 @@
     </div>
     <nav class="navbar navbar-default navbar-fixed-bottom">
         <footer class="container">
-            created by <a href=""><span><i class="" style="color:#1daf12"></i>Desy Mila Santi</a>
+            Created by <a href=""><span><i class="" style="color:#1daf12"></i>@Duita Rofika</a>
         </footer>
     </nav>
     <script type="text/javascript" src="{{asset('component/jquery/dist/jquery.min.js')}}"></script>
